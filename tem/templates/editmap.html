@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+		#lux {
+		border-collapse:collapse;
+		font-size: 0.9em;
+		margin: 25px 0;
+		min-width: 400px;
+		}
+		#lux thead tr{
+		background-color: #009879;
+		color: white;
+		text-align: left;
+		font-weight: bold;
+		}
+		#lux th,td{
+		padding: 12px 15px;
+		}
+		#lux tbody tr{
+		border-bottom: 2px solid #009879;
+		}
+		}
+
+	</style>
+</head>
+<body>
+<form method="post" action="/updatemap/{{ obj.CO_id_id }}">
+	{% csrf_token %}
+	<h2 style="color:blue">Updating mapping for CO {{ obj.CO_id_id }}</h2>
+	<h2 style="color:blue">CO {{ obj.CO_id_id }} is {{ coobj.Outcome }}</h2>
+	<table  id="lux" width="100%">
+		<thead>
+    		<tr>
+				<th>PO1</th>
+				<th>PO2</th>
+				<th>PO3</th>
+				<th>PO4</th>
+				<th>PO5</th>
+				<th>PO6</th>
+        		<th>PO7</th>
+				<th>PO8</th>
+				<th>PO9</th>
+				<th>PO10</th>
+				<th>PO11</th>
+				<th>PO12</th>
+    		</tr>
+		</thead>
+		<tbody>
+   			<tr>
+				<td>{{ form.VPO1 }}</td>
+				<td>{{ form.VPO2 }}</td>
+				<td>{{ form.VPO3 }}</td>
+				<td>{{ form.VPO4 }}</td>
+				<td>{{ form.VPO5 }}</td>
+				<td>{{ form.VPO6 }}</td>
+				<td>{{ form.VPO7 }}</td>
+				<td>{{ form.VPO8 }}</td>
+				<td>{{ form.VPO9 }}</td>
+				<td>{{ form.VPO10 }}</td>
+				<td>{{ form.VPO11 }}</td>
+				<td>{{ form.VPO12 }}</td>
+    		</tr>
+		</tbody>
+	</table>
+			<br><br>
+           <div class="col-md-12 text-center animate-box">
+		        <button class="btn btn-primary btn-lg btn-learn">update</button>
+		    </div>
+        </form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+		#lux {
+		border-collapse:collapse;
+		font-size: 0.9em;
+		margin: 25px 0;
+		min-width: 400px;
+		}
+		#lux thead tr{
+		background-color: #009879;
+		color: white;
+		text-align: left;
+		font-weight: bold;
+		}
+		#lux th,td{
+		padding: 12px 15px;
+		}
+		#lux tbody tr{
+		border-bottom: 2px solid #009879;
+		}
+		}
+
+	</style>
+</head>
+<body>
+<form method="post" action="/update/{{obj.CO_id}}">
+			{% csrf_token %}
+
+            <h2 style="color:blue">Enter new Co for ID {{ obj.CO_id }}</h2>
+			{{ form.Outcome }}
+			<br><br>
+				<h2 style="color:blue">Enter the Asssignments Contributing:</h2>
+			{{ form.assignments }}
+			<br><br>
+				<h2 style="color:blue">Enter the Units Contributing:</h2>
+			{{ form.units }}
+			<br><br>
+				<h2 style="color:blue">Select the factors to be Associated</h2>
+
+			<table width="100%" id="lux" border="1px solid black">
+    	<tr>
+			<th>Insem</th>
+			<th>Endsem</th>
+        	<th>Practical</th>
+			<th>Term_Work</th>
+    	</tr>
+   		<tr >
+			<td bgcolor="white">{{ form.insem }}</td>
+			<td bgcolor="white">{{ form.endsem }}</td>
+			<td  bgcolor="white"> {{ form.practicle }}</td>
+			<td bgcolor="white">{{ form.TW }}</td>
+    	</tr>
+	</table><br><br>
+           <div class="col-md-12 text-center animate-box">
+		        <button class="btn btn-primary btn-lg btn-learn">update</button>
+		    </div>
+        </form>
+</body>
+</html>
